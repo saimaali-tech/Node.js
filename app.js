@@ -5,6 +5,6 @@ const server = http.createServer((req, res) => {
   res.end("hello its a simple node.js app");
 });
 
-server.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+server.listen(3003, () => {
+  console.log("Server running on http://localhost:3003");
 });
