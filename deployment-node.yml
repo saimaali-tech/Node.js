@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node.js
+  name: node-js
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
-      app: node.js
+      app: node-js
   template:
     metadata:
       labels:
-        app: node.js
+        app: node-js
     spec:
       containers:
-        - name:  priceless_hypatia
-          image:  saimaali079/node.js:v1  
+        - name: node-js-container
+          image: saimaali079/node.js:v1
           ports:
             - containerPort: 3003
 
@@ -25,7 +25,7 @@ metadata:
   name: node-js-service
 spec:
   selector:
-    app: node.js
+    app: node-js
   type: LoadBalancer
   ports:
     - port: 3003
